@@ -1,8 +1,15 @@
 
-### 2. video 최적화
+### 1. 이미지 지연 로딩
+
+### 2. 이미지 사이즈 최적화
+    https://squoosh.app
+
+
+### 3. video 최적화
 변환 사이트 : https://www.media.io/
 
-### 3. Font 최적화
+### 4. Font 최적화
+변환 사이트 : https://transfonter.org/
 
 1) FOUT : Flash of Unstyled Text
    1) 다운로드가 되기 전 기본 폰트 제공
@@ -52,7 +59,7 @@
                4) config-overrides.js > 설정 추가
 
 
-### 4. 캐시(Cache)
+### 5. 캐시(Cache)
 1) 메모리 캐시 : Ram 에 저장
    1) cache-control 로 유효기간을 설정할 수 있다.
    2) server 설정이 필요함.
@@ -80,5 +87,22 @@
           
 2) 디스크 캐시 : File 에 저장
 
+### 6. Unused css
+   * light house
+   * ![img_6.png](img_6.png)
+   1. purgeCSS 
+      1. https://purgecss.com/
+      2. html, css, js {static resource} 의 문자열을 비교하고, class가 classname 에 포함되어 있지 않으면 제거.
+   2. package.json 의 스크립트에 purge 실행할 스크립트 작성.
+      1. "purge": "purgecss --css ./build/static/css/*.css --output ./build/static/css --content ./build/index.html ./build/static/js/*.js --config ./purgecss.config.js"
+   3. purgecss.config.js 
+      1. 특수문자가 포함된 class name 을 삭제하기 위한 설정을 추가해 주어야 함.
+      
+## [정리]
+![img_7.png](img_7.png)
+![img_8.png](img_8.png)
+![img_9.png](img_9.png)
+![img_10.png](img_10.png)
+![img_11.png](img_11.png)
 
 
